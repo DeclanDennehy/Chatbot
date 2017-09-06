@@ -22,7 +22,7 @@
     }
 
     function film_description(){
-        $results = json_decode(file_get_contents($_GET["url_film"]),TRUE);
+        $results = json_decode(file_get_contents($_GET["url_films"]),TRUE);
         echo '{"messages": [{"text": "Name: '.$results["name"].',\\nGender: '.$results["gender"].',\\nHeight: '.$results["height"].'cm,\\nWeight '.$results["mass"].'kg,\\nHomeworld: '.$homeworld["name"].'"}]}';
     }
 ?>
