@@ -1,5 +1,5 @@
 <?php
-    // handle querys
+    // handle person querys
     if(isset($_GET["q"])){
         // untested BEGIN
         
@@ -28,6 +28,6 @@
     if(isset($_GET["url"])){
         $results = json_decode(file_get_contents($_GET["url"]),TRUE);
         $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
-        echo '{"messages": [{"text": "Test"}]}';
+        echo '{"messages": [{"text": "'.$results["name"].$results["gender"].$results["height"].$results["mass"].$homeworld["name"].'"}]}';
     }
 ?>
