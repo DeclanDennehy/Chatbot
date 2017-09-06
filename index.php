@@ -21,25 +21,21 @@
         $message .= TEXT_END;
         $message .= RESPONSE_END;
         //echo $message;
-        echo '{
-  "messages": [
-    {
-      "text":  "Who are you interested in?",
-      "quick_replies": [
-        {
-          "title":"'.$results["results"][0]["name"].'",
-          "block_names":["person"]
-          "set_attributes": {"person_chosen": "'.$results["results"][0]["url"].'"}
-        },
-        {
-          "title":"'.$results["results"][1]["name"].'",
-          "block_names":["person"]
-          "set_attributes": {"person_chosen": "'.$results["results"][1]["url"].'"}
-        }
-      ]
-    }
-  ]
-}';
+        echo '{"messages": [{
+            "text":  "Who are you interested in?",
+            "quick_replies": [
+                {
+                  "title":"'.$results["results"][0]["name"].'",
+                  "block_names":["person"],
+                  "set_attributes": {"person_chosen": "'.$results["results"][0]["url"].'"}
+                },
+                {
+                  "title":"'.$results["results"][1]["name"].'",
+                  "block_names":["person"],
+                  "set_attributes": {"person_chosen": "'.$results["results"][1]["url"].'"}
+                }
+            ]
+        }]}';
     }
     else{
         echo RESPONSE_START.TEXT_START.'No query was given!'.TEXT_END.RESPONSE_END;
