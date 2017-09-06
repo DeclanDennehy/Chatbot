@@ -23,6 +23,6 @@
 
     function starship_description(){
         $results = json_decode(file_get_contents($_GET["url_starships"]),TRUE);
-        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nGender: '.$results["gender"].',\\nHeight: '.$results["height"].'cm,\\nWeight '.$results["mass"].'kg,\\nHomeworld: '.$homeworld["name"].'"}]}';
+        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nModel: '.$results["model"].',\\nManufacturer: '.$results["manufacturer"].',\\nCost:  '.$results["cost_in_credits"].' credits,\\nCrew: '.$results["crew"].' people,\\nPassengers: '.$results["passengers"].' people,\\nClass: '.$results["starship_class"].'"}]}';
     }
 ?>
