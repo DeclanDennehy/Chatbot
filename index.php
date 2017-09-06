@@ -26,7 +26,7 @@
 
     // handle person urls
     if(isset($_GET["url_person"])){
-        $results = json_decode(file_get_contents($_GET["url"]),TRUE);
+        $results = json_decode(file_get_contents($_GET["url_person"]),TRUE);
         $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
         echo '{"messages": [{"text": "Name: '.$results["name"].',\\nGender: '.$results["gender"].',\\nHeight: '.$results["height"].'cm,\\nWeight '.$results["mass"].'kg,\\nHomeworld: '.$homeworld["name"].'"}]}';
     }
@@ -56,7 +56,7 @@
 
     // handle planet urls
     if(isset($_GET["url_planet"])){
-        $results = json_decode(file_get_contents($_GET["url"]),TRUE);
+        $results = json_decode(file_get_contents($_GET["url_planet"]),TRUE);
         echo '{"messages": [{"text": "Name: '.$results["name"].',\\nDiameter: '.$results["diameter"].',\\nClimate: '.$results["climate"].',\\nTerrain '.$results["terrain"].',\\nPopulation: '.$homeworld["population"].' inhabitants"}]}';
     }
 ?>
