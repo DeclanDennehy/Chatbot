@@ -6,13 +6,13 @@
         
         for($i = 0; ($i < $count-1 && $i < 9); $i++){
             $message .= '{
-                  "title":"'.$results["results"][$i]["name"].'",
+                  "title":"'.$results["results"][$i]["title"].'",
                   "block_names":["Film"],
                   "set_attributes": {"film_chosen": "'.$results["results"][$i]["url"].'"}
                 },';
         }
         $message .= '{
-                  "title":"'.$results["results"][$i]["name"].'",
+                  "title":"'.$results["results"][$i]["title"].'",
                   "block_names":["Film"],
                   "set_attributes": {"film_chosen": "'.$results["results"][$i]["url"].'"}
                 }]
