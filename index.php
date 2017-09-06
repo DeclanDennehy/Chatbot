@@ -24,11 +24,17 @@
         echo '{
   "messages": [
     {
-      "text":  "testRedirectInQuickReply",
+      "text":  "Who are you interested in?",
       "quick_replies": [
         {
-          "title":"go",
-          "block_names":["Block1", "Block2"]
+          "title":"'.$results["results"][0]["name"].'",
+          "block_names":["person"]
+          "set_attributes": {"person_chosen": "'.$results["results"][0]["url"].'"}
+        },
+        {
+          "title":"'.$results["results"][1]["name"].'",
+          "block_names":["person"]
+          "set_attributes": {"person_chosen": "'.$results["results"][1]["url"].'"}
         }
       ]
     }
