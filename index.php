@@ -3,9 +3,9 @@
     if ($search != ""){
         $response_json = file_get_contents("http://swapi.co/api/people/?search=".$search);
         $response_parsed = json_decode($response_json, TRUE);
-        echo '{"messages": [{"text": "Found '.$response_parsed["count"].' possibilities"}]}';
         echo '{
   "messages": [
+    {"text": "Found '.$response_parsed["count"].' possibilities"},
     {
       "attachment": {
         "type": "template",
