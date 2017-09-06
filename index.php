@@ -28,11 +28,10 @@
     if(isset($_GET["url"])){
         $results = json_decode(file_get_contents($_GET["url"]),TRUE);
         $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
-        echo '{"messages":[{"text": "
+        echo '{"messages": [{"text": "
         Name: '.$results["name"].'\\n
         Height: '.$results["height"].'cm\\n
         Mass: '.$results["mass"].'kg\\n
-        Homeworld: '.$homeworld["name"].'\\n
-        "}]}';
+        Homeworld: '.$homeworld["name"].'"}]}';
     }
 ?>
