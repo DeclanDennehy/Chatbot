@@ -11,13 +11,7 @@
         echo '{
   "messages": [
     {"text": "Found '.$response_parsed["count"].' possibilities"},
-    {"text": "
-        Name: '.$name.'\n
-        Year of Birth: '.$yob.'\n
-        Species: '.$species.'
-        Homeworld: '.$homeworld.'
-        Appears in: '.$films.'
-    "} 
+    {"text": "Name: '.$name.' Year of Birth: '.$yob.' Species: '.$species.' Homeworld: '.$homeworld.' Appears in: '.$films.'"} 
   ]
 }';
         
