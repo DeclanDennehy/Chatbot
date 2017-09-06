@@ -11,7 +11,7 @@
         $results = json_decode(file_get_contents("https://swapi.co/api/people?search=".$_GET["q"]),TRUE);
         $count = $results["count"];
         $message = RESPONSE_START;
-        for($i = 0; $i < $count-1; $i++){
+        for($i = 0; ($i < $count-1 && $i < 9); $i++){
             $message .= TEXT_START;
             $message .= $results["results"][$i]["name"];
             $message .= TEXT_END_COMMA;
