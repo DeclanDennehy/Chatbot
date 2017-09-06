@@ -22,6 +22,6 @@
 
     function planet_description(){
         $results = json_decode(file_get_contents($_GET["url_planet"]),TRUE);
-        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nDiameter: '.$results["diameter"].',\\nClimate: '.$results["climate"].',\\nTerrain '.$results["terrain"].',\\nPopulation: '.$homeworld["population"].' inhabitants"}]}';
+        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nDiameter: '.$results["diameter"].',\\nClimate: '.$results["climate"].',\\nTerrain '.$results["terrain"].',\\nPopulation: '.results["population"].'"}]}';
     }
 ?>
