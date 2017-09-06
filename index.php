@@ -1,62 +1,95 @@
 <?php
     // handle person querys
     if(isset($_GET["query_person"])){
-        // untested BEGIN
-        
-        $results = json_decode(file_get_contents("https://swapi.co/api/people?search=".$_GET["query_person"]),TRUE);
-        $count = $results["count"];
-        $message = '{"messages": [{"text":  "Who are you interested in?","quick_replies": ['; 
-        
-        for($i = 0; ($i < $count-1 && $i < 9); $i++){
-            $message .= '{
-                  "title":"'.$results["results"][$i]["name"].'",
-                  "block_names":["Person"],
-                  "set_attributes": {"person_chosen": "'.$results["results"][$i]["url"].'"}
-                },';
-        }
-        $message .= '{
-                  "title":"'.$results["results"][$i]["name"].'",
-                  "block_names":["Person"],
-                  "set_attributes": {"person_chosen": "'.$results["results"][$i]["url"].'"}
-                }]
-        }]}';
-        echo $message;
+        include 'person.php';
+        person_query();
         return;
     }
 
     // handle person urls
     if(isset($_GET["url_person"])){
-        $results = json_decode(file_get_contents($_GET["url_person"]),TRUE);
-        $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
-        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nGender: '.$results["gender"].',\\nHeight: '.$results["height"].'cm,\\nWeight '.$results["mass"].'kg,\\nHomeworld: '.$homeworld["name"].'"}]}';
+        include 'person.php';
+        person_description();
+        return;
     }
+
 
 
     // handle planet querys
     if(isset($_GET["query_planet"])){
-        $results = json_decode(file_get_contents("https://swapi.co/api/planets?search=".$_GET["query_planet"]),TRUE);
-        $count = $results["count"];
-        $message = '{"messages": [{"text":  "What are you interested in?","quick_replies": ['; 
-        for($i = 0; ($i < $count-1 && $i < 9); $i++){
-            $message .= '{
-                  "title":"'.$results["results"][$i]["name"].'",
-                  "block_names":["Planet"],
-                  "set_attributes": {"planet_chosen": "'.$results["results"][$i]["url"].'"}
-                },';
-        }
-        $message .= '{
-                  "title":"'.$results["results"][$i]["name"].'",
-                  "block_names":["Planet"],
-                  "set_attributes": {"planet_chosen": "'.$results["results"][$i]["url"].'"}
-                }]
-        }]}';
-        echo $message;
+        include 'planet.php';
+        planet_query();
         return;
     }
 
     // handle planet urls
     if(isset($_GET["url_planet"])){
-        $results = json_decode(file_get_contents($_GET["url_planet"]),TRUE);
-        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nDiameter: '.$results["diameter"].',\\nClimate: '.$results["climate"].',\\nTerrain '.$results["terrain"].',\\nPopulation: '.$homeworld["population"].' inhabitants"}]}';
+        include 'planet.php';
+        planet_description();
+        return;
+    }
+
+
+
+     // handle species querys
+    if(isset($_GET["query_species"])){
+        include 'species.php';
+        species_query();
+        return;
+    }
+
+    // handle species urls
+    if(isset($_GET["url_species"])){
+        include 'species.php';
+        species_description();
+        return;
+    }
+
+
+
+    // handle species starship querys
+    if(isset($_GET["query_starships"])){
+        include 'starships.php';
+        starships_query();
+        return;
+    }
+    
+    // handle species starship querys
+    if(isset($_GET["url_starships"])){
+        include 'starships.php';
+        starship_description();
+        return;
+    }
+
+
+
+    // handle species vehicle querys
+    if(isset($_GET["query_vehicles"])){
+        include 'vehicles.php';
+        vehicles_query();
+        return;
+    }
+    
+    // handle species vehicle querys
+    if(isset($_GET["url_vehicles"])){
+        include 'vehicles.php';
+        vehicle_description();
+        return;
+    }
+
+
+
+    // handle species films querys
+    if(isset($_GET["query_films"])){
+        include 'films.php';
+        films_query();
+        return;
+    }
+
+    // handle species films querys
+    if(isset($_GET["url_films"])){
+        include 'films.php';
+        film_description();
+        return;
     }
 ?>
