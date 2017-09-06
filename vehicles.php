@@ -7,7 +7,7 @@
         for($i = 0; ($i < $count-1 && $i < 9); $i++){
             $message .= '{
                   "title":"'.$results["results"][$i]["name"].'",
-                  "block_names":["Vehicles"],
+                  "block_names":["Vehicle"],
                   "set_attributes": {"vehicle_chosen": "'.$results["results"][$i]["url"].'"}
                 },';
         }
