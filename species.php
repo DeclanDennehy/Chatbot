@@ -23,8 +23,8 @@
 
     function species_description(){
         $results = json_decode(file_get_contents($_GET["url_species"]),TRUE);
-        $homeworld = json_decode(file_get_contents($_GET["url_species"]["homeworld"]),TRUE);
+        $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
         
-        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nClassification: '.$results["classification"].',\\nAverage Height: '.$results["average_height"].'cm,\\nAverage Lifespan '.$results["average_lifespan"].'years,\\nHomeworld: '.$homeworld["name"].',\\nLanguage: '.$results["language"].'"}]}';
+        echo '{"messages": [{"text": "Name: '.$results["name"].',\\nClassification: '.$results["classification"].',\\nAverage Height: '.$results["average_height"].'cm,\\nAverage Lifespan: '.$results["average_lifespan"].' years,\\nHomeworld: '.$homeworld["name"].',\\nLanguage: '.$results["language"].'"}]}';
     }
 ?>
