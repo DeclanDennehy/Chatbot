@@ -27,6 +27,6 @@
     // handle urls
     if(isset($_GET["url"])){
         $results = json_decode(file_get_contents($_GET["url"]),TRUE);
-        echo '{"messages":[{"text": '.$results["name"].'}]}';
+        echo '{"messages":[{"text": "'.$results["name"].'"}]}';
     }
 ?>
