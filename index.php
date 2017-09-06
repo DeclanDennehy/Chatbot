@@ -30,9 +30,8 @@
         $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
         echo '{"messages": [{"text": "Name: '.$results["name"].',\\nGender: '.$results["gender"].',\\nHeight: '.$results["height"].'cm,\\nWeight '.$results["mass"].'kg,\\nHomeworld: '.$homeworld["name"].'"}]}';
     }
-
-
-    // handle planet querys
+    
+    /* handle planet querys
     if(isset($_GET["query_planet"])){
         $results = json_decode(file_get_contents("https://swapi.co/api/planets?search=".$_GET["q"]),TRUE);
         $count = $results["count"];
@@ -54,9 +53,10 @@
         return;
     }
 
-    // handle planet urls
+    /* handle planet urls
     if(isset($_GET["url_planet"])){
         $results = json_decode(file_get_contents($_GET["url"]),TRUE);
         echo '{"messages": [{"text": "Name: '.$results["name"].',\\nDiameter: '.$results["diameter"].',\\nClimate: '.$results["climate"].',\\nTerrain '.$results["terrain"].',\\nPopulation: '.$homeworld["population"]. inhabitants'"}]}';
     }
+    */
 ?>
