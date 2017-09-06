@@ -20,7 +20,20 @@
         $message .= $results["results"][$i]["name"];
         $message .= TEXT_END;
         $message .= RESPONSE_END;
-        echo $message;
+        //echo $message;
+        echo '{
+  "messages": [
+    {
+      "text":  "testRedirectInQuickReply",
+      "quick_replies": [
+        {
+          "title":"go",
+          "block_names":["Block1", "Block2"]
+        }
+      ]
+    }
+  ]
+}';
     }
     else{
         echo RESPONSE_START.TEXT_START.'No query was given!'.TEXT_END.RESPONSE_END;
