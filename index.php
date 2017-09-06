@@ -3,7 +3,7 @@
     if(isset($_GET["query_person"])){
         // untested BEGIN
         
-        $results = json_decode(file_get_contents("https://swapi.co/api/people?search=".$_GET["q"]),TRUE);
+        $results = json_decode(file_get_contents("https://swapi.co/api/people?search=".$_GET["query_person"]),TRUE);
         $count = $results["count"];
         $message = '{"messages": [{"text":  "Who are you interested in?","quick_replies": ['; 
         
@@ -34,7 +34,7 @@
 
     // handle planet querys
     if(isset($_GET["query_planet"])){
-        $results = json_decode(file_get_contents("https://swapi.co/api/planets?search=".$_GET["q"]),TRUE);
+        $results = json_decode(file_get_contents("https://swapi.co/api/planets?search=".$_GET["query_planet"]),TRUE);
         $count = $results["count"];
         $message = '{"messages": [{"text":  "What are you interested in?","quick_replies": ['; 
         for($i = 0; ($i < $count-1 && $i < 9); $i++){
