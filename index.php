@@ -27,6 +27,12 @@
     // handle urls
     if(isset($_GET["url"])){
         $results = json_decode(file_get_contents($_GET["url"]),TRUE);
-        echo '{"messages":[{"text": "'.$results["name"].'"}]}';
+        $homeworld = json_decode(file_get_contents($results["homeworld"]),TRUE);
+        echo '{"messages":[{"text": "
+        Name: '.$results["name"].'\\n
+        Height: '.$results["height"].'cm\\n
+        Mass: '.$results["mass"].'kg\\n
+        Homeworld: '.$homeworld["name"].'\\n
+        "}]}';
     }
 ?>
