@@ -1,10 +1,8 @@
 <?php
     $search = $_GET["q"];
     if ($search != ""){
-        echo '{"messages":[
-            {"text: "You searched for'.$search.'"}
-        ]}';
+        echo '{"messages": [{"text": "Welcome to our store!"},{"text": "How can I help you?"}]}';
     } else {
-        echo "empty response";
+        echo '{"messages": [{"text": "No response found!"}]}';
     }
 ?>
