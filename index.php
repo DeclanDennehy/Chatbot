@@ -1,10 +1,5 @@
 <?php
-    const RESPONSE_START = '{"messages": [';
-    const RESPONSE_END = ']}';
-    const TEXT_START = '{"text": "';
-    const TEXT_END_COMMA = '"},';
-    const TEXT_END = '"}';
-
+    // handle querys
     if(isset($_GET["q"])){
         // untested BEGIN
         
@@ -26,8 +21,16 @@
                 }]
         }]}';
         echo $message;
+        return;
     }
     else{
         echo RESPONSE_START.TEXT_START.'No query was given!'.TEXT_END.RESPONSE_END;
+        return;
+    }
+
+    // handle urls
+    if(isset($_GET["url"])){
+        $results = json_decode(file_get_contents($_GET["url"]),TRUE);
+        echo '{"messages":[{"text": $results["name"]}]';
     }
 ?>
