@@ -23,6 +23,6 @@
 
     function film_description(){
         $results = json_decode(file_get_contents($_GET["url_films"]),TRUE);
-        echo '{"messages": [{"text": "Title: '.$results["title"].',\\nEpisode Number: '.$results["episode_id"].',\\nDate of Release: '.$results["release_date"].',\\nDirector '.$results["director"].'"},{"text": "'.$results["opening_crawl"].'"}]}';
+        echo '{"messages": [{"text": "Title: '.$results["title"].',\\nEpisode Number: '.$results["episode_id"].',\\nDate of Release: '.$results["release_date"].',\\nDirector: '.$results["director"].'"},{"text": "crawl.."}]}';
     }
 ?>
