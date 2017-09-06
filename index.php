@@ -23,10 +23,6 @@
         echo $message;
         return;
     }
-    else{
-        echo RESPONSE_START.TEXT_START.'No query was given!'.TEXT_END.RESPONSE_END;
-        return;
-    }
 
     // handle urls
     if(isset($_GET["url"])){
