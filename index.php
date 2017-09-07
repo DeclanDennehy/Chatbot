@@ -43,7 +43,7 @@
         case "url_starships":
             include 'starships.php';
             starship_description();
-            break;
+            break; 
         // search for a vehicle and send the results to the chatbot
         case "query_vehicles":
             include 'vehicles.php';
